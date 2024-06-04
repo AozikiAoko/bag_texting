@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://qwhkf5yh4c0u"]
+
+[ext_resource type="Texture2D" uid="uid://n34l13h1a2js" path="res://assets/icon.svg" id="1_kir57"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_sre0v"]
+[ext_resource type="PackedScene" uid="uid://crnqby65o8o71" path="res://boxes/pick_up_box.tscn" id="3_6vdm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vehv7"]
+size = Vector2(129, 128)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_sre0v")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-3, 1)
+texture = ExtResource("1_kir57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_vehv7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+limit_smoothed = true
+
+[node name="pick_up" parent="." instance=ExtResource("3_6vdm3")]
+collision_layer = 1
+collision_mask = 2

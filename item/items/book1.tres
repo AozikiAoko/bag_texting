@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="items_father" load_steps=4 format=3 uid="uid://cig50pl4nofng"]
+
+[ext_resource type="Script" path="res://item/items_father.gd" id="1_5ogue"]
+[ext_resource type="Texture2D" uid="uid://cysna0fgve2h8" path="res://assets/items.png" id="1_8fe62"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbhxn"]
+atlas = ExtResource("1_8fe62")
+region = Rect2(0, 416, 32, 32)
+
+[resource]
+script = ExtResource("1_5ogue")
+name = "book1"
+value = 0
+icon = SubResource("AtlasTexture_dbhxn")

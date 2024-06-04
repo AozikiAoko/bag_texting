@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crnqby65o8o71"]
+
+[ext_resource type="Script" path="res://boxes/pick_up_box.gd" id="1_wwnam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfft8"]
+radius = 114.039
+
+[node name="pick_up" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_wwnam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jfft8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

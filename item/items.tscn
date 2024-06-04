@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpgv6nql4ps5u"]
+
+[ext_resource type="Script" path="res://item/items.gd" id="1_ckb4w"]
+[ext_resource type="PackedScene" uid="uid://jms5hqxo378" path="res://boxes/pick_up_able.tscn" id="1_mwc75"]
+[ext_resource type="Texture2D" uid="uid://cysna0fgve2h8" path="res://assets/items.png" id="2_uv3qm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g04qu"]
+atlas = ExtResource("2_uv3qm")
+region = Rect2(0, 288, 32, 32)
+
+[node name="items" type="Node2D"]
+script = ExtResource("1_ckb4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_g04qu")
+
+[node name="PickUpAble" parent="." instance=ExtResource("1_mwc75")]
+collision_layer = 2
+
+[editable path="PickUpAble"]
