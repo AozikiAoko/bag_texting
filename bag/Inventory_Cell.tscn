@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqma2xpvb3bqe"]
+
+[ext_resource type="Script" path="res://bag/Inventory_Cell.gd" id="1_gw5im"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yppb3"]
+region = Rect2(128, 288, 32, 32)
+
+[node name="MarginContainer" type="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_gw5im")
+
+[node name="icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_yppb3")
+expand_mode = 2
+
+[node name="count" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40

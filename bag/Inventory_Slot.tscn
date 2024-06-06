@@ -2,11 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b3jwtdvx08euw" path="res://assets/inventorySlot.png" id="1_16t0y"]
 [ext_resource type="Script" path="res://bag/Inventory_Slot.gd" id="1_k4b6f"]
+[ext_resource type="PackedScene" uid="uid://cqma2xpvb3bqe" path="res://bag/Inventory_Cell.tscn" id="3_jjvi8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yppb3"]
-region = Rect2(128, 288, 32, 32)
-
-[node name="PanelContainer" type="PanelContainer"]
+[node name="InventorySolt" type="PanelContainer"]
 custom_minimum_size = Vector2(100, 100)
 offset_left = -22.0
 offset_top = -20.0
@@ -24,23 +22,8 @@ scale = Vector2(4.8875, 4.8875)
 texture = ExtResource("1_16t0y")
 vframes = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(100, 100)
+[node name="inventoryCell" parent="." instance=ExtResource("3_jjvi8")]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
 
-[node name="icon" type="TextureRect" parent="MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-texture = SubResource("AtlasTexture_yppb3")
-expand_mode = 2
-
-[node name="count" type="Label" parent="MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="state_change" from="inventoryCell" to="." method="_on_inventory_cell_state_change"]

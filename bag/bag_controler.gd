@@ -10,15 +10,9 @@ func _ready():
 	Bag_Inventory.updated.connect(update)
 	update()
 	Bag_Inventory.init(itemslots.size())
-	
-func _input(event):
-	if event.is_action_pressed("bag"):
-		visible=!visible
-	elif event.is_action_pressed("exit_bag"):
-		visible=false
 
 
 func update():
-	for i in min(itemslots.size(),slot.size()):
-		itemslots[i].inventoryslots=slot[i]
+	for i in min(itemslots.size(), slot.size()):
+		itemslots[i].itemslot = slot[i]
 		itemslots[i].update()

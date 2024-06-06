@@ -5,16 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://doucqxytqeq5p" path="res://bag/Inventory_Slot.tscn" id="2_440i7"]
 
 [node name="bag" type="Panel"]
-offset_left = 229.0
-offset_top = 34.0
-offset_right = 947.0
-offset_bottom = 620.0
+offset_left = 206.0
+offset_top = 28.0
+offset_right = 922.0
+offset_bottom = 622.0
 script = ExtResource("1_8t2vk")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 699.0
-offset_bottom = 576.0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 701.0
+offset_bottom = 581.0
 texture = ExtResource("1_r0yb6")
 region_rect = Rect2(6, 6, 7, 7)
 

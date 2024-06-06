@@ -1,0 +1,4 @@
+diff a/.gitattributes b/.gitattributes	(rejected hunks)
+@@ -0,0 +1,2 @@
++# Normalize EOL for all files that Git considers text files.
++* text=auto eol=lf

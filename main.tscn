@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn8r6tlaqwyqk"]
+[gd_scene load_steps=9 format=3 uid="uid://dn8r6tlaqwyqk"]
 
 [ext_resource type="Texture2D" uid="uid://b0xasgn274by6" path="res://assets/base_map.png" id="1_4agvd"]
 [ext_resource type="PackedScene" uid="uid://qwhkf5yh4c0u" path="res://player/player.tscn" id="2_5mtld"]
 [ext_resource type="PackedScene" uid="uid://bel0miqff8j50" path="res://GUI/GUI.tscn" id="2_sw1d8"]
+[ext_resource type="Script" path="res://bag/InventoriesContainer.gd" id="4_dd1ks"]
 [ext_resource type="PackedScene" uid="uid://c3u7hq2gmrtl3" path="res://bag/bag.tscn" id="4_v2dck"]
+[ext_resource type="PackedScene" uid="uid://cqma2xpvb3bqe" path="res://bag/Inventory_Cell.tscn" id="6_rjih7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqqda"]
 texture = ExtResource("1_4agvd")
@@ -42,7 +44,29 @@ z_index = 1
 
 [node name="GUI" parent="." instance=ExtResource("2_sw1d8")]
 
-[node name="bag" parent="GUI" instance=ExtResource("4_v2dck")]
+[node name="InventoriesContainer" type="Panel" parent="GUI" groups=["InventoriesContainer"]]
 visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -326.5
+offset_right = 575.0
+offset_bottom = 326.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_dd1ks")
+
+[node name="bag" parent="GUI/InventoriesContainer" instance=ExtResource("4_v2dck")]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 33.0
+offset_right = 928.0
+offset_bottom = 619.0
+
+[node name="InventoryCell" parent="GUI/InventoriesContainer" instance=ExtResource("6_rjih7")]
+layout_mode = 0
 
 [node name="items" type="Node2D" parent="." groups=["items"]]
